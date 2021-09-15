@@ -8,6 +8,7 @@
 <script>
   import Mainbar from './components/Mainbar.vue'
   import Sidebar from './components/Sidebar.vue'
+  import { mapActions } from 'vuex'
 
   export default {
     name: 'App',
@@ -15,5 +16,17 @@
       Sidebar,
       Mainbar
     },
+
+    methods: {
+      ...mapActions([
+        'fetchTodayWeather',
+        'fetchNextWeather'
+      ]),
+    },
+
+    created() {
+      this.fetchTodayWeather()
+      this.fetchNextWeather()
+    }
   }
 </script>
