@@ -23,6 +23,38 @@ body {
   overflow-y: auto;
 }
 
+
+/* 
+  SIDEBAR
+*/
+
+.sidebar {
+  width: 25%;
+  left: 0;
+  background: #1E213A linear-gradient(-45deg, #1E213A, #282d53);
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding: 40px 0;
+  color: #d4d4d4;
+}
+
+.sidebar h1 {
+  font-size: 80px;
+}
+
+.sidebar h1 span {
+  font-size: 45px;
+  font-weight: lighter;
+}
+
+.sidebar img {
+  width: 50%;
+  margin: 0 22%;
+  display: block;
+}
+
 /* 
   MAINBAR
 */
