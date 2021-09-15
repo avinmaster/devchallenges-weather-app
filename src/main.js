@@ -7,6 +7,7 @@ import store from './store'
 
 // Components
 import App from './App.vue'
+import './assets/styles/app.css'
 
 Vue.config.productionTip = false
 

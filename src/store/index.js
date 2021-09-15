@@ -17,6 +17,10 @@ export default new Vuex.Store({
   mutations: {
     SET_LOADING_STATUS(state, status) {
       state.loading = status
+    },
+
+    SET_TEMP_TYPE(state, status) {
+      state.tempType = status
     }
   },
   actions: {
@@ -34,12 +38,22 @@ export default new Vuex.Store({
 
       axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${state.city}&appid=fe9b0008543180c9e5fcf10f5beb8691&units=metric`)
       .then((res) => {
-          commit('SET_LOADING_STATUS', false)
-          state.nextWeather = res.data
-      })
-    }
-  },
-  getters: {
+          const allWeather = res.data
 
+          for (var i = 0; i < res.data.list.length; i += 8) {
+            state.nextWeather.push(allWeather.list[i])
+          }
+
+          commit('SET_LOADING_STATUS', false)
+      })
+    },
+
+    tempTypeToF({ commit }) {
+      commit('SET_TEMP_TYPE', 'F')
+    },
+
+    tempTypeToC({ commit }) {
+      commit('SET_TEMP_TYPE', 'C')
+    }
   }
 })
