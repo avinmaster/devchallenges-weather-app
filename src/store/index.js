@@ -26,7 +26,7 @@ export default new Vuex.Store({
   actions: {
     fetchTodayWeather({ commit, state }) {
       commit('SET_LOADING_STATUS', true)
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${state.city}&appid=fe9b0008543180c9e5fcf10f5beb8691&units=metric`)
+      axios.get(`${process.env.VUE_APP_API_URL}/weather?q=${state.city}&appid=fe9b0008543180c9e5fcf10f5beb8691&units=metric`)
       .then((res) => {
         commit('SET_LOADING_STATUS', false)
         state.todayWeather = res.data
@@ -36,7 +36,7 @@ export default new Vuex.Store({
     fetchNextWeather({ commit, state }) {
       commit('SET_LOADING_STATUS', true)
 
-      axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${state.city}&appid=fe9b0008543180c9e5fcf10f5beb8691&units=metric`)
+      axios.get(`${process.env.VUE_APP_API_URL}/forecast?q=${state.city}&appid=fe9b0008543180c9e5fcf10f5beb8691&units=metric`)
       .then((res) => {
           const allWeather = res.data
 
