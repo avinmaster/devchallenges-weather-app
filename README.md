@@ -3,6 +3,8 @@
 ## Project setup
 ```
 yarn install
+# Then create an environment file (.env)
+cp .env.example .env
 ```
 
 ### Compiles and hot-reloads for development
