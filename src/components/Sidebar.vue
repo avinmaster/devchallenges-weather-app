@@ -16,7 +16,7 @@ export default {
 
   methods: {
     getDate() {
-      console.log(this.todayWeather)
+      // console.log(this.todayWeather)
       let newDate = new Date()
 
       return `${this.weekDays[newDate.getDay()]}, ${newDate.getDate()} ${this.months[newDate.getMonth()]}`
