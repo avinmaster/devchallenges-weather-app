@@ -62,7 +62,7 @@ body {
 .mainbar {
   width: 75%;
   right: 0;
-  padding: 0 5%;
+  padding: 0 5% 50px 5%;
   overflow-y: auto;
   background: #100E1D;
 }
@@ -198,13 +198,13 @@ body {
 .arrow:before {
     content:"";
     position:absolute;
-    top: -8px;
-    left: -10px;
+    top: -4px;
+    left: -8px;
     width: 0;
     height: 0;
-    border-top: 11px solid transparent;
-    border-right: 11px solid #E7E7EB;
-    border-bottom: 11px solid transparent;
+    border-top: 7px solid transparent;
+    border-right: 7px solid #E7E7EB;
+    border-bottom: 7px solid transparent;
 }
 
 .panel h1 {
